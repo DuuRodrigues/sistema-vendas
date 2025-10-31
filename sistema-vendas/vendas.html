@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Venda</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <h1>Registrar Venda</h1>
@@ -27,7 +28,9 @@
     <label for="valorUnitario">Valor Unitário (R$):</label>
     <input type="number" step="0.01" id="valorUnitario">
 
+    <button id="btnSalvarPDF">Salvar Venda em PDF</button>
     <button id="btnRegistrarVenda">Registrar Venda</button>
+    
   </section>
 
   <section class="lista-container">
@@ -47,3 +50,4 @@
   </section>
 
   <script type="module" src="
+
