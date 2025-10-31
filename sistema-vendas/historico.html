@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Vendas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Histórico de Vendas</h1>
+
+  <nav>
+    <a href="index.html">🏠 Início</a> |
+    <a href="cadastro.html">📝 Cadastro</a> |
+    <a href="vendas.html">💰 Vendas</a>
+  </nav>
+
+  <section class="form-container">
+    <h2>Filtrar Histórico</h2>
+
+    <label for="filtroProduto">Produto:</label>
+    <select id="filtroProduto">
+      <option value="">Todos</option>
+    </select>
+
+    <label for="filtroData">Data:</label>
+    <input type="date" id="filtroData">
+
+    <button id="btnFiltrar">Filtrar</button>
+  </section>
+
+  <section class="lista-container">
+    <h2>Lista de Vendas</h2>
+    <table id="tabelaHistorico">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Valor Unitário</th>
+          <th>Total</th>
+          <th>Variação de Preço</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script type="module" src="js/

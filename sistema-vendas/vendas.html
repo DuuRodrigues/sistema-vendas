@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Venda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Registrar Venda</h1>
+
+  <nav>
+    <a href="index.html">🏠 Início</a> |
+    <a href="cadastro.html">📝 Cadastro</a> |
+    <a href="historico.html">📜 Histórico</a>
+  </nav>
+
+  <section class="form-container">
+    <h2>Nova Venda</h2>
+    
+    <label for="produtoSelect">Produto:</label>
+    <select id="produtoSelect"></select>
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade" value="1" min="1">
+
+    <label for="valorUnitario">Valor Unitário (R$):</label>
+    <input type="number" step="0.01" id="valorUnitario">
+
+    <button id="btnRegistrarVenda">Registrar Venda</button>
+  </section>
+
+  <section class="lista-container">
+    <h2>Resumo da Venda</h2>
+    <table id="tabelaResumo">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Qtd</th>
+          <th>Valor Unitário</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p>Total da Venda: R$ <span id="totalVenda">0.00</span></p>
+  </section>
+
+  <script type="module" src="
