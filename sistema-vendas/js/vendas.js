@@ -91,4 +91,45 @@ btnRegistrar.addEventListener("click", async () => {
     console.error("Erro ao registrar venda:", e);
     alert("Erro ao registrar venda!");
   }
+
+});
+
+// Salvar a Venda em PDF
+import { jsPDF } from "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+
+const btnSalvarPDF = document.getElementById("btnSalvarPDF");
+
+btnSalvarPDF.addEventListener("click", () => {
+  const doc = new jsPDF();
+
+  doc.setFontSize(18);
+  doc.text("Resumo da Venda", 105, 15, { align: "center" });
+
+  let linhaY = 30;
+  doc.setFontSize(12);
+
+  // Cabeçalho
+  doc.text("Produto", 20, linhaY);
+  doc.text("Qtd", 80, linhaY);
+  doc.text("Valor Unitário", 110, linhaY);
+  doc.text("Total", 160, linhaY);
+
+  linhaY += 10;
+
+  // Percorrer tabela de vendas
+  const linhas = tabelaBody.querySelectorAll("tr");
+  linhas.forEach(linha => {
+    const cols = linha.querySelectorAll("td");
+    doc.text(cols[0].innerText, 20, linhaY);
+    doc.text(cols[1].innerText, 80, linhaY);
+    doc.text(cols[2].innerText, 110, linhaY);
+    doc.text(cols[3].innerText, 160, linhaY);
+    linhaY += 10;
+  });
+
+  // Total da venda
+  doc.text(`Total: R$ ${totalVenda.toFixed(2)}`, 105, linhaY + 10, { align: "center" });
+
+  // Salvar PDF
+  doc.save("venda.pdf");
 });
